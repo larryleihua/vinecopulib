@@ -6,7 +6,7 @@
 
 #include <vinecopulib/misc/tools_optimization.hpp>
 #include <vinecopulib/misc/tools_stats.hpp>
-
+#include <dlib/optimization.h>
 #include <cmath>
 
 namespace vinecopulib {

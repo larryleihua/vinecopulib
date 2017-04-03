@@ -25,14 +25,15 @@ set_target_properties(vinecopulib PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS 1)
 if(BUILD_TESTING)
     set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
     set(unit_tests
-            test_all
-            test_bicop_parametric
-            test_bicop_sanity_checks
-            test_bicop_kernel
-            test_rvine_matrix
-            test_tools_stats
-            test_vinecop_class
-            test_vinecop_sanity_checks)
+            test_dlib)
+            #test_all
+            #test_bicop_parametric
+            #test_bicop_sanity_checks
+            #test_bicop_kernel
+            #test_rvine_matrix
+            #test_tools_stats
+            #test_vinecop_class
+            #test_vinecop_sanity_checks)
 
     add_subdirectory(test)
     file(GLOB_RECURSE r_scripts cmake/templates/*R)
@@ -142,4 +143,3 @@ if (NOT WIN32)
         setup_target_for_coverage(${PROJECT_NAME}_coverage test_all coverage)
     endif()
 endif()
-
