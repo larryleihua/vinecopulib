@@ -26,6 +26,7 @@ namespace vinecopulib {
         bb6,           ///< BB6 copula
         bb7,           ///< BB7 copula
         bb8,           ///< BB8 copula
+        pppp,          ///< PPPP copula
         tll0           ///< Transformation local-constant likelihood kernel estimator
     };
 
@@ -48,6 +49,7 @@ namespace vinecopulib {
             BicopFamily::bb6, 
             BicopFamily::bb7, 
             BicopFamily::bb8,
+            BicopFamily::pppp,
             BicopFamily::tll0
         };
         
@@ -63,7 +65,8 @@ namespace vinecopulib {
             BicopFamily::bb1, 
             BicopFamily::bb6, 
             BicopFamily::bb7, 
-            BicopFamily::bb8
+            BicopFamily::bb8,
+            BicopFamily::pppp
         };
         
         //! All nonparametric families
@@ -87,7 +90,9 @@ namespace vinecopulib {
             BicopFamily::bb1, 
             BicopFamily::bb6, 
             BicopFamily::bb7, 
-            BicopFamily::bb8
+            BicopFamily::bb8,
+            BicopFamily::pppp // PPPP can have at most 4 parameters; only two 
+                              // parameter version is implemented with a=b=1
         }; 
         
         //! All elliptical copulas
@@ -123,6 +128,7 @@ namespace vinecopulib {
             BicopFamily::gaussian, 
             BicopFamily::student, 
             BicopFamily::frank, 
+            BicopFamily::pppp, 
             BicopFamily::tll0
         };
         
@@ -130,7 +136,8 @@ namespace vinecopulib {
         const std::vector<BicopFamily> lt = {
             BicopFamily::clayton, 
             BicopFamily::bb1, 
-            BicopFamily::bb7
+            BicopFamily::bb7,
+            BicopFamily::pppp 
         };  
         
         //! Families with stronger dependence in the upper tail
@@ -140,7 +147,8 @@ namespace vinecopulib {
             BicopFamily::bb1, 
             BicopFamily::bb6, 
             BicopFamily::bb7, 
-            BicopFamily::bb8
+            BicopFamily::bb8,
+            BicopFamily::pppp
         };
         
         //! Families for which `method = "itau"` is available in Bicop::fit()
