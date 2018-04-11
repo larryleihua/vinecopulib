@@ -1,3 +1,152 @@
+# vinecopulib 0.2.7 (March 1, 2018)
+
+NEW FEATURES
+
+   * new criterion for tree selection `"mcor"` (#309).
+
+BUG FIXES
+   
+   * fix bandwidth scaling for family `"tll"`(#309).
+
+
+# vinecopulib 0.2.6 (February 22, 2018)
+
+NEW FEATURES
+
+   * add checks for data in (0, 1) (#305).
+
+   * add scaling by `mcor` to estimate the bandwidth of `TllBicop` (#302) .
+     
+   * add mBICV to select the truncation level and threshold (#304).
+
+BUG FIXES
+   
+   * improve Windows build (#301, #302).
+   
+   * fix `hoeffd` in `calculate_criterion` (#297).
+
+
+# vinecopulib 0.2.5 (January 14, 2018)
+
+NEW FEATURES
+
+   * speed up vine copula algorithms by pre-computing information related to 
+     the vine structure (#292).
+     
+   * the selected threshold parameter can be returned from the `Vinecop` 
+     object (#290).
+
+BUG FIXES
+
+   * fix storage order of pair copulas when structure is fixed (#289).
+   
+   * fixed selection algorithm for threshold and truncation level (#290, #294,
+     #295).
+
+
+# vinecopulib 0.2.4 (December 29, 2017)
+
+BUG FIXES
+
+   * adapt Vinecop's `simulate()` and `pdf()` to truncated vines (#279) 
+
+   * make bb8 lower bound ensure feasible computations in `parameters_to_tau()` 
+   (#278 and #280)
+
+   * default initialize Rcout (#277).
+
+
+# vinecopulib 0.2.3 (November 18, 2017)
+
+NEW FEATURES
+
+   * faster implementation of Archimedean pdfs (#274).
+
+BUG FIXES
+
+   * add safeguards for estimation of `Bicop`/`Vinecop` objects with 
+     insufficient data (#273).
+
+   * fix segfault issue in completing a truncated vine fit (#272).
+
+   * make `par_method = "itau"` respect the parameter bounds (#271).
+
+
+# vinecopulib 0.2.2 (November 9, 2017)
+
+NEW FEATURES
+
+   * allow `"loglik"` as selection criterion (#267).
+
+BUG FIXES
+ 
+   * make interpolation grid symmetric around (0.5, 0.5) again (#268).
+
+
+# vinecopulib 0.2.1 (November 7, 2017)
+
+NEW FEATURES
+
+   * faster vine copula estimation and selection by parallelizing further 
+     sub-routines (#259).
+
+   * enhanced cross-platform compatibility and addition of a `STRICT_COMPILER`
+     option for gcc (#261).
+        
+   * increased precision of maximum-likelihood estimators (#264).
+   
+BUG FIXES
+
+   * made arguments of pairwise dependence measures consistent (#258).
+   
+   * fixed `itau` estimation method for Frank copulas (only allowed for positive
+     parameters) (#263).
+
+
+# vinecopulib 0.2.0 (October 30, 2017)
+ 
+LIBRARY TYPE
+
+   * library is now header only by default (#246), with an option to compile it
+     as a shared library (#249).
+
+DEPENDENCIES
+
+   * removed dependency on `NLopt` (#239).
+
+NEW FEATURES
+ 
+   * NA handling (#237, #238).
+   
+   * parallelized selection/estimation of (pair-) copulas (#240).
+   
+   * efficient storage and fitting of truncated vines (#248).
+   
+   * Brent line search for (profile-) maximum-likelihood estimation of 
+     one-parameter families (#255).
+     
+   * more restrictive parameter bounds for Archimedean families, ensuring 
+     their numerical stability (#256).
+
+BUG FIXES
+
+   * error thrown whenever `Vinecop` or `Bicop` constructors are called with
+    datasets containing a single row (#251).
+     
+   * ensure `const` correctness of `Vinecop` and `Bicop` member functions 
+     (#225).
+   
+   * made order of inverse Rosenblatt consistent for d = 2 and d > 2 (#232).
+   
+   * fixed bug in interpolation near upper right corner (#233).
+   
+   * interpolation grid is now symmetric around (0.5, 0.5) (#234).
+   
+   * stabilized quadratic tll estimator near zero (#235).
+   
+   * stabilized Archimedean pdfs (#256).
+
+   
 # vinecopulib 0.1.0 (August 23, 2017)
 
 NEW FEATURES
@@ -91,4 +240,4 @@ BUG FIXES
 
 # vinecopulib 0.0.1 (March 29, 2017)
 
-Initial rlease.
+Initial release.
